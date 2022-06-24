@@ -1,0 +1,10 @@
+$HeaderHeight: 64px;
+$PageWidth: 1500px;
+$MinPageWidth: 1200px;
+$MaxPageWidth: 1500px;
+
+@mixin text-ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

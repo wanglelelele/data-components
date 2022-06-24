@@ -1,0 +1,310 @@
+@import url('./font.scss');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+#app {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  font-size: 14px;
+  margin: 0 auto;
+  font-family: 'PingFangSC-Regular', 'Avenir', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-size: cover;
+  min-width: $MinPageWidth;
+}
+/* 设置滚动条的样式 */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 8px;
+}
+/* 滚动槽 */
+::-webkit-scrollbar-track {
+  box-shadow: inset 2px 0 16px rgba(255, 255, 255, 0.6);
+  background: rgba(144, 150, 153, 0.1);
+  border-radius: 2px;
+}
+/* 滚动条滑块 */
+::-webkit-scrollbar-thumb {
+  border-radius: 2px;
+  background: #ccc;
+}
+::-webkit-scrollbar-thumb:window-inactive {
+  background: #ccc;
+}
+
+:root {
+  --el-color-white: #ffffff;
+  --el-color-primary: #007aff;
+  --el-color-primary-light-8: #ebf5ff;
+  --el-color-primary-light-9: #ecf5ff;
+  --el-color-text-desc: #666666;
+  --el-border-color: #d8d8d8;
+  --el-border-color-light: #eaedf3;
+  --el-border-color-light-1: #efefef;
+  --el-text-color-regular: #999999;
+  --el-text-color-tag: #fa6400;
+  --el-text-color-danger: #ff0000;
+  --el-text-color-success: #23bc00;
+  --el-text-color-warn: #ff9f0d;
+}
+/* flex 弹性布局
+------------------------------- */
+.flex {
+  display: flex;
+}
+.flex-auto {
+  flex: 1;
+  // overflow: hidden;
+}
+.flex-auto-scroll {
+  flex: 1;
+  overflow: auto;
+}
+.flex-no-wrap {
+  display: flex;
+  flex-wrap: nowrap;
+}
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+.flex-v-center {
+  align-items: center;
+}
+.flex-shrink-0 {
+  flex-shrink: 0;
+}
+
+/* cursor 鼠标形状
+------------------------------- */
+// 默认
+.cursor-default {
+  cursor: default !important;
+}
+// 帮助
+.cursor-help {
+  cursor: help !important;
+}
+// 手指
+.cursor-pointer {
+  cursor: pointer !important;
+}
+// 移动
+.cursor-move {
+  cursor: move !important;
+}
+
+/* 宽高 100%
+------------------------------- */
+.w100 {
+  width: 100% !important;
+}
+.h100 {
+  height: 100% !important;
+}
+.vh100 {
+  height: 100vh !important;
+}
+.max100vh {
+  max-height: 100vh !important;
+}
+.min100vh {
+  min-height: 100vh !important;
+}
+
+/* 常用文字颜色
+------------------------------- */
+.text-color-desc {
+  color: var(--el-color-text-desc);
+}
+.text-color-label {
+  color: var(--el-color-text-desc);
+}
+.text-color-regular {
+  color: var(--el-text-color-regular);
+}
+.text-color-tag {
+  color: var(--el-text-color-tag);
+}
+.text-color-danger {
+  color: var(--el-text-color-danger);
+}
+.text-color-warn {
+  color: var(--el-text-color-warn);
+}
+.text-color-success {
+  color: var(--el-text-color-success);
+}
+.text-color-primary {
+  color: var(--el-color-primary);
+}
+
+/* 字体大小全局样式
+------------------------------- */
+@for $i from 10 through 36 {
+  .font#{$i} {
+    font-size: #{$i}px !important;
+  }
+}
+
+/* 字体粗全局样式
+------------------------------- */
+.font-weight600 {
+  font-weight: 600;
+}
+/* 字体倾斜
+------------------------------- */
+.font-oblique {
+  font-style: oblique;
+}
+/* DIN字体
+------------------------------- */
+.font-din {
+  font-family: 'DINPro-Bold';
+}
+/* 全局字体
+------------------------------- */
+.font-regular {
+  font-family: 'PingFangSC-Regular', 'Avenir', Helvetica, Arial, sans-serif;
+}
+
+/* 外边距、内边距全局样式
+------------------------------- */
+@for $i from 0 through 130 {
+  .mt#{$i} {
+    margin-top: #{$i}px !important;
+  }
+  .mr#{$i} {
+    margin-right: #{$i}px !important;
+  }
+  .mb#{$i} {
+    margin-bottom: #{$i}px !important;
+  }
+  .ml#{$i} {
+    margin-left: #{$i}px !important;
+  }
+  .pt#{$i} {
+    padding-top: #{$i}px !important;
+  }
+  .pr#{$i} {
+    padding-right: #{$i}px !important;
+  }
+  .pb#{$i} {
+    padding-bottom: #{$i}px !important;
+  }
+  .pl#{$i} {
+    padding-left: #{$i}px !important;
+  }
+}
+
+/* 定位
+------------------------------- */
+.g-relative {
+  position: relative;
+}
+.g-sticky {
+  position: sticky;
+  top: 0;
+}
+
+/* box-背景色
+------------------------------- */
+.white-box {
+  background-color: var(--el-color-white);
+  border-radius: 8px;
+}
+/* 加载中背景色
+------------------------------- */
+.loading-bg {
+  background: rgba(0, 0, 0, 0.05);
+}
+/* 价格颜色
+------------------------------- */
+.price-color {
+  color: #ff0000;
+}
+// 平行四边形
+.parallelogram {
+  position: relative;
+  z-index: 1;
+  padding: 0 6px;
+  border-radius: 2px;
+  color: var(--el-text-color-tag);
+  font-size: 12px;
+  white-space: nowrap;
+  max-width: 72px;
+  display: inline-block;
+  @include text-ellipsis;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 2px;
+    bottom: 0;
+    right: 2px;
+    background: #ffe5d4;
+    transform: skewX(-15deg);
+    z-index: -1;
+    border-radius: 2px;
+  }
+}
+// 隔竖线
+.line {
+  position: relative;
+  padding-right: 6px;
+  padding-left: 6px;
+  &::before {
+    content: '';
+    position: absolute;
+    height: 13px;
+    width: 1px;
+    top: 50%;
+    background: #999999;
+    transform: translateY(-50%);
+    left: 5px;
+  }
+}
+// ⭕️
+.circle {
+  display: inline-block;
+  border-radius: 50%;
+  width: 12px;
+  height: 12px;
+  border: 2px solid var(--el-color-primary);
+}
+// 页面标题
+.page-title {
+  padding: 16px 24px;
+  border-bottom: 1px solid var(--el-border-color-light-1);
+  font-weight: 600;
+  font-size: 18px;
+}
+.text-ellipsis {
+  @include text-ellipsis;
+}
+
+// 富文本样式
+.prismjs-box {
+  overflow: auto;
+  img {
+    max-width: 100%;
+  }
+}
+
+.drag-line {
+  width: 100%;
+  height: 2px;
+  cursor: row-resize;
+}
+
